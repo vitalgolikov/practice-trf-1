@@ -1,0 +1,7 @@
+fresh-span-354807-534ab503606f.json
+*.tfstate
+.terraform
+/.idea
+*.backup
+*.iml
+*.hcl

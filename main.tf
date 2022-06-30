@@ -5,12 +5,12 @@ resource "google_compute_instance" "vital-vm" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = var.image
     }
   }
 
   network_interface {
-    network = "default"
+    network = var.network
 
     access_config {
       // Ephemeral public IP
@@ -18,20 +18,20 @@ resource "google_compute_instance" "vital-vm" {
   }
 
   metadata = {
-    foo = "bar"
+    foo = var.tag
   }
 
-  metadata_startup_script = file("${path.module}/pkginstall.sh")
+  metadata_startup_script = file(var.execute)
 
-  service_account {
-    scopes = ["cloud-platform"]
-  }
 }
 
 resource "google_storage_bucket" "S3-bucket" {
   name          = var.bucket_name
-  location      = "EU"
-  force_destroy = true
+  location      = var.bucket_location
+  force_destroy = var.bucket_force_destroy
 
-  uniform_bucket_level_access = true
+  uniform_bucket_level_access = var.bucket_level_access
+}
+
+
 }

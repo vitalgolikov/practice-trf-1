@@ -12,5 +12,5 @@ provider "google" {
   project     = "fresh-span-354807"
   region      = "us-central"
   zone        = "us-central1-a"
-  credentials = "fresh-span-354807-37059affb474.json"
+  credentials = "fresh-span-354807-534ab503606f.json"
 }
