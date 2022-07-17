@@ -5,3 +5,4 @@ fresh-span-354807-534ab503606f.json
 *.backup
 *.iml
 *.hcl
+terraform.tfstate
