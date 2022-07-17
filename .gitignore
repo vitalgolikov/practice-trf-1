@@ -6,3 +6,4 @@ fresh-span-354807-534ab503606f.json
 *.iml
 *.hcl
 terraform.tfstate
+".terraform*"
